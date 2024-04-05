@@ -76,8 +76,8 @@
 
 .card .status {
   font-size: 0.7rem;
-  color: #fff;
-  font-weight: 600;
+  color: #ff00c3;
+  font-weight: 800;
   text-transform: uppercase;
   padding: 0.25rem 0.3rem;
   background: oklch(var(--status) / 50%);
