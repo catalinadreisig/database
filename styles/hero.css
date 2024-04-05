@@ -4,14 +4,14 @@ header:is(body > *) {
   flex-wrap: wrap-reverse;
   gap: 2rem;
   align-items: center;
-  background: linear-gradient(90deg, #000 30%, #0000 70%), #000;
+
   padding-inline: max(2rem, (100% - 1200px) / 2);
   padding-block: clamp(1rem, 5vw, 2rem) var(--padding-bottom);
-  --svg-bg: var(--svg-pattern) 50% 100% / 100% var(--padding-bottom) no-repeat, linear-gradient(#000 0 0) 0 0 / 100% calc(100.1% - var(--padding-bottom)) no-repeat;
+
   -webkit-mask: var(--svg-bg);
   mask: var(--svg-bg);
   min-height: 60svh;
-  color: #fff;
+  color: #cef700;
 
   & p {
     max-width: 50ch;
@@ -32,10 +32,11 @@ h1 {
   hyphens: auto;
   text-transform: uppercase;
 }
-
+/**
 .text-gradient {
   background: linear-gradient(90deg, oklch(0.65 0.3 29.57), oklch(0.28 0.12 31.22));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
 }
+*/
