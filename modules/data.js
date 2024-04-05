@@ -17,7 +17,7 @@ export async function getRecipes() {
 //DRY - Don't Repeat Yourself
 //AHA - Avoid Hasty Abstractions
 
-export async function createRecipe() {
+export async function createRecipe(recipe) {
   let headersList = {
     Accept: "application/json",
     apikey: apikey,
@@ -25,16 +25,7 @@ export async function createRecipe() {
     "Content-Type": "application/json",
   };
 
-  let bodyContent = JSON.stringify({
-    name: "Sol over Gudhjem",
-    description: "En klassisk præ salmonella ret",
-    ingredients: ["Æggeblomme", "Rugbrød"],
-    serves: 1,
-    allergens: ["Æg"],
-    diet: "Vegetar",
-    studentFriendly: true,
-    origin: "Denmark",
-  });
+  let bodyContent = JSON.stringify(recipe);
 
   let response = await fetch(endpoint, {
     method: "POST",
@@ -61,7 +52,7 @@ export async function deleteRecipe(id) {
   let data = await response.json();
   return data;
 }
-export async function updateRecipe(id) {
+export async function updateRecipe(id, state = true) {
   let headersList = {
     Accept: "application/json",
     apikey: apikey,
@@ -70,7 +61,7 @@ export async function updateRecipe(id) {
   };
 
   let bodyContent = JSON.stringify({
-    studentFriendly: false,
+    studentFriendly: state,
   });
 
   let response = await fetch(endpoint + "?id=eq." + id, {
